@@ -14,8 +14,8 @@
     </thead>
     <tbody *ngFor="let row of rows">
       <tr>
-        <td>{{row.title}}</td>
-        <td>{{row.author}}</td>
+        <td [textContent]="row.title"></td>
+        <td [textContent]="row.author"></td>
         <td class="right">{{row.price | currency: 'EUR':true}}</td>
         <td class="right"><input></td>
         <td class="right">{{row.price | currency: 'EUR':true}}</td>
