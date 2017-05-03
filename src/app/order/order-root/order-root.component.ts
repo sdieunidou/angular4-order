@@ -28,12 +28,14 @@ export class OrderRootComponent implements OnInit {
 
   totalHt() {
     return this.rows
+      .filter(row => row.ht() >= 0)
       .map(row => row.ht())
       .reduce(ReduceUtil.total, 0);
   }
 
   totalTtc() {
     return this.rows
+      .filter(row => row.ttc() >= 0)
       .map(row => row.ttc())
       .reduce(ReduceUtil.total, 0);
   }
