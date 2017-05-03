@@ -5,6 +5,7 @@ import {FormsModule} from "@angular/forms";
 import { OrderRowsComponent } from './order-rows/order-rows.component';
 import { OrderManualFormComponent } from './order-manual-form/order-manual-form.component';
 import { OrderCatalogFormComponent } from './order-catalog-form/order-catalog-form.component';
+import {CatalogService} from "./catalog.service";
 
 @NgModule({
   imports: [
@@ -19,6 +20,10 @@ import { OrderCatalogFormComponent } from './order-catalog-form/order-catalog-fo
   ],
   exports: [
     OrderRootComponent
-  ]
+  ],
+  providers: [
+    // {provide: CatalogService, useClass: CatalogService}
+    CatalogService
+  ],
 })
 export class OrderModule { }

@@ -1,6 +1,11 @@
 <form>
-  <label>Livre<select></select></label>
-  <label>Quantité <input></label>
+  <label>
+    Livre
+    <select name="book" [(ngModel)]="books" required>
+      <option *ngFor="let book of books | async" [value]="book.title">{{book.title}}</option>
+    </select>
+  </label>
+  <label>Quantité <input type="number" name="quantity" required /></label>
   <input type="submit" value="Ajouter">
 </form>
 
