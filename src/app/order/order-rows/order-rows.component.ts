@@ -1,4 +1,4 @@
-import {Component, Inject, Input, LOCALE_ID, OnInit} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, LOCALE_ID, OnInit, Output} from '@angular/core';
 
 import { OrderRow } from "../order-row.model";
 import {ReduceUtil} from "../../reduce.util";
@@ -11,16 +11,13 @@ import {ReduceUtil} from "../../reduce.util";
 export class OrderRowsComponent implements OnInit {
 
   @Input() rows: OrderRow[];
+  @Output() remove = new EventEmitter<OrderRow>();
 
   constructor(@Inject(LOCALE_ID) locale: string) {
     console.log(locale);
   }
 
   ngOnInit() {
-  }
-
-  remove(row: OrderRow) {
-    this.rows = this.rows.filter(r => r !== row);
   }
 
   totalHt() {
@@ -40,4 +37,5 @@ export class OrderRowsComponent implements OnInit {
   isBig(amount) {
     return amount >= 100;
   }
+
 }

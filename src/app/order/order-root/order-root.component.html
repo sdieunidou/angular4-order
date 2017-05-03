@@ -1,9 +1,6 @@
 <div>
-  <app-order-rows [rows]="rows"></app-order-rows>
+  <app-order-rows [rows]="rows" (remove)="removeRow($event)"></app-order-rows>
 
-  <hr />
-
-  <pre>{{rows|json}}</pre>
   <hr />
 
   <h2>Ajout manuel</h2>
