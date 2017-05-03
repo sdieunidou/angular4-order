@@ -22,8 +22,11 @@ export class OrderRootComponent implements OnInit {
   }
 
   public remove = function(row) {
-    this.rows = this.rows.filter((item) => {
+    this.rows = this.rows.filter(r => r !== row);
+    /*
+     this.rows = this.rows.filter((item) => {
       return item !== row;
-    })
+     })
+     */
   }
 }
