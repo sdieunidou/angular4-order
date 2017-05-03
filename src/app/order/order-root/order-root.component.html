@@ -26,8 +26,8 @@
     <tfoot>
       <tr>
         <td colspan="4">Total</td>
-        <td class="right">{{totalHt()}}</td>
-        <td class="right">{{totalTtc()}}</td>
+        <td class="right">{{totalHt() | currency: 'EUR':true}}</td>
+        <td class="right">{{totalTtc() | currency: 'EUR':true}}</td>
         <td></td>
       </tr>
     </tfoot>
