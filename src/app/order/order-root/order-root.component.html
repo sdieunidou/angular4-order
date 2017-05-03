@@ -17,7 +17,7 @@
         <td [textContent]="row.title"></td>
         <td [textContent]="row.author"></td>
         <td class="right">{{row.price | currency: 'EUR':true}}</td>
-        <td class="right"><input type="number" [value]="row.quantity" (change)="row.quantity = $event.target.value" />{{row.quantity}}</td>
+        <td class="right"><input type="number" [(ngModel)]="row.quantity" /></td>
         <td class="right">{{row.price | currency: 'EUR':true}}</td>
         <td class="right">{{row.price | currency: 'EUR':true}}</td>
         <td><button (click)="remove(row)">Supprimer</button></td>
@@ -32,6 +32,10 @@
       </tr>
     </tfoot>
   </table>
+
+  <pre>
+    {{rows|json}}
+  </pre>
 
   <h2>Ajout manuel</h2>
   <form>
