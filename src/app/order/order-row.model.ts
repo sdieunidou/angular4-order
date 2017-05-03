@@ -16,3 +16,12 @@ export class OrderRow {
     this.quantity = quantity;
   }
 }
+
+/*
+ constructor(
+   public title: string,
+   public author: string,
+   public price: number,
+   public quantity: number
+ )
+ */
