@@ -1,7 +1,21 @@
 <form (submit)="submit(data)">
-  <label>Titre    <input type="text" name="title" [(ngModel)]="data.title" /></label>
-  <label>Auteur   <input type="text" name="author" [(ngModel)]="data.author" /></label>
-  <label>Prix     <input type="number" name="price" [(ngModel)]="data.price" /></label>
-  <label>Quantité <input type="number" name="quantity" [(ngModel)]="data.quantity" /></label>
-  <input type="submit" value="Ajouter">
+  <div class="form-group">
+    <label>
+      Titre
+      <input class="form-control" type="text" name="title" [(ngModel)]="data.title" />
+    </label>
+  </div>
+  <div class="form-group">
+    <label>Auteur   <input class="form-control" type="text" name="author" [(ngModel)]="data.author" /></label>
+  </div>
+  <div class="form-group">
+    <label>Prix     <input class="form-control" type="number" name="price" [(ngModel)]="data.price" /></label>
+  </div>
+  <div class="form-group">
+    <label>Quantité <input class="form-control" type="number" name="quantity" [(ngModel)]="data.quantity" /></label>
+  </div>
+
+  <div class="text-right">
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+  </div>
 </form>

@@ -1,10 +1,20 @@
 <form (submit)="submit(data)">
-  <label>
-    Livre
-    <select name="book" [(ngModel)]="data.book" required>
-      <option *ngFor="let book of books | async" [ngValue]="book">{{book.title}}</option>
-    </select>
-  </label>
-  <label>Quantité <input type="number" name="quantity" [(ngModel)]="data.quantity" required /></label>
-  <input type="submit" value="Ajouter">
+  <div class="form-group">
+    <label>
+      Livre
+      <select class="form-control" name="book" [(ngModel)]="data.book" required>
+        <option *ngFor="let book of books | async" [ngValue]="book">{{book.title}}</option>
+      </select>
+    </label>
+  </div>
+  <div class="form-group">
+    <label>
+      Quantité
+      <input type="number" name="quantity" class="form-control" [(ngModel)]="data.quantity" required />
+    </label>
+  </div>
+
+  <div class="text-right">
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+  </div>
 </form>

@@ -58,3 +58,7 @@ table tfoot td {
 table input {
   width: 3em;
 }
+
+body {
+  padding-top: 30px;
+}
