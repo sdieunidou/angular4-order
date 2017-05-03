@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 
 import { OrderRow } from "../order-row.model";
 
@@ -14,7 +14,9 @@ export class OrderRootComponent implements OnInit {
     new OrderRow("Des fleurs pour Algernon", "Daniel Keyes", 6.00, 5),
   ];
 
-  constructor() { }
+  constructor(@Inject(LOCALE_ID) locale: string) {
+    console.log(locale);
+  }
 
   ngOnInit() {
   }
