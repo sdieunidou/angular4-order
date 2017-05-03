@@ -29,7 +29,7 @@ export class OrderCatalogFormComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
       this.reset();
-      this.subscription = this.catalog.getList()
+      this.subscription && this.subscription = this.catalog.getList()
         .subscribe(books => this.books = books);
   }
 
