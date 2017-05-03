@@ -1,18 +1,40 @@
 <div class="row">
   <div class="col-xs-8">
-    <app-order-rows [rows]="rows" (remove)="removeRow($event)"></app-order-rows>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1 class="panel-title">Ma commande de livres</h1>
+      </div>
+      <div class="panel-body">
+        <app-order-rows [rows]="rows" (remove)="removeRow($event)"></app-order-rows>
+      </div>
+    </div>
   </div>
   <div class="col-xs-4">
+
     <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1 class="panel-title">Mode d'ajout</h1>
+      </div>
       <div class="panel-body">
-        <h2>Ajout manuel</h2>
+        <input type="checkbox" name="isManual" [(ngModel)]="isManual"> Activer le mode manuel ?
+      </div>
+    </div>
+
+    <div class="panel panel-default" *ngIf="isManual">
+      <div class="panel-heading">
+        <h2 class="panel-title">Ajout manuel</h2>
+      </div>
+      <div class="panel-body">
         <app-order-manual-form (add)="addRow($event)"></app-order-manual-form>
       </div>
     </div>
 
-    <div class="panel panel-default">
+    <div class="panel panel-default" *ngIf="!isManual">
+      <div class="panel-heading">
+        <h2 class="panel-title">Ajout depuis le catalogue</h2>
+      </div>
       <div class="panel-body">
-        <h2>Ajout depuis le catalogue</h2>
         <app-order-catalog-form (add)="addRow($event)"></app-order-catalog-form>
       </div>
     </div>

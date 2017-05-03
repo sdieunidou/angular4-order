@@ -13,6 +13,12 @@ export class OrderRootComponent implements OnInit {
     new OrderRow("Des fleurs pour Algernon", "Daniel Keyes", 6.00, 5),
   ];
 
+  isManual: boolean;
+
+  constructor() {
+      this.isManual = false;
+  }
+
   ngOnInit() {
   }
 
