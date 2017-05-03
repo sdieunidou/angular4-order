@@ -40,4 +40,8 @@ export class OrderRootComponent implements OnInit {
       .reduce(ReduceUtil.total, 0);
   }
 
+  isBig(amount) {
+    return amount >= 100;
+  }
+
 }
