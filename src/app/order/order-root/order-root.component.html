@@ -16,9 +16,9 @@
       <tr>
         <td>{{row.title}}</td>
         <td>{{row.author}}</td>
-        <td class="right">9,99</td>
+        <td class="right">{{row.price | currency: 'EUR':true}}</td>
         <td class="right"><input></td>
-        <td class="right">{{row.price | currency: 'EUR':true }}</td>
+        <td class="right">{{row.price | currency: 'EUR':true}}</td>
         <td class="right">{{row.price | currency: 'EUR':true}}</td>
         <td><button >Supprimer</button></td>
       </tr>
