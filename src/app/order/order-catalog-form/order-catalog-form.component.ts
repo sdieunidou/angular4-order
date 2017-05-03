@@ -1,8 +1,9 @@
-import {Component, EventEmitter, Injectable, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Injectable, OnDestroy, OnInit, Output} from '@angular/core';
 import {CatalogService} from "../catalog.service";
 import {Observable} from "rxjs/Observable";
 import {Book} from "../book.model";
 import {OrderRow} from "../order-row.model";
+import {Subscription} from "rxjs/Subscription";
 
 @Component({
   selector: 'app-order-catalog-form',
@@ -12,9 +13,9 @@ import {OrderRow} from "../order-row.model";
 
 
 @Injectable()
-export class OrderCatalogFormComponent implements OnInit {
-  books: Observable<Book[]>;
-
+export class OrderCatalogFormComponent implements OnInit, OnDestroy {
+  books: Book[];
+  subscription: Subscription;
   @Output() add = new EventEmitter<OrderRow>();
 
   data: {
@@ -28,7 +29,12 @@ export class OrderCatalogFormComponent implements OnInit {
 
   ngOnInit() {
       this.reset();
-      this.books = this.catalog.getList();
+      this.subscription = this.catalog.getList()
+        .subscribe(books => this.books = books);
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   reset() {

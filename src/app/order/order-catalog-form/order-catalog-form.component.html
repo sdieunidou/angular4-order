@@ -3,7 +3,7 @@
     <label>
       Livre
       <select class="form-control" name="book" [(ngModel)]="data.book" required>
-        <option *ngFor="let book of books | async" [ngValue]="book">{{book.title}}</option>
+        <option *ngFor="let book of books" [ngValue]="book">{{book.title}}</option>
       </select>
     </label>
   </div>
