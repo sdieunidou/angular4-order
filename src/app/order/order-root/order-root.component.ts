@@ -20,4 +20,7 @@ export class OrderRootComponent implements OnInit {
     this.rows = this.rows.filter(r => r !== row);
   }
 
+  addRow(row: OrderRow) {
+    this.rows.push(row);
+  }
 }

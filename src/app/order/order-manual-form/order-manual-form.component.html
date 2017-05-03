@@ -1,7 +1,11 @@
-<form>
-  <label>Titre    <input type="text" /></label>
-  <label>Auteur   <input type="text" /></label>
-  <label>Prix     <input type="number" /></label>
-  <label>Quantité <input type="number" /></label>
+<form (submit)="submit(data)">
+  <label>Titre    <input type="text" name="title" [(ngModel)]="data.title" /></label>
+  <label>Auteur   <input type="text" name="author" [(ngModel)]="data.author" /></label>
+  <label>Prix     <input type="number" name="price" [(ngModel)]="data.price" /></label>
+  <label>Quantité <input type="number" name="quantity" [(ngModel)]="data.quantity" /></label>
   <input type="submit" value="Ajouter">
 </form>
+
+<pre>
+  {{data|json}}
+</pre>
