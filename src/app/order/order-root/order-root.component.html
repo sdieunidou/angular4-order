@@ -18,8 +18,8 @@
         <td [textContent]="row.author"></td>
         <td class="right">{{row.price | currency: 'EUR':true}}</td>
         <td class="right"><input type="number" [(ngModel)]="row.quantity" /></td>
-        <td class="right">{{row.price | currency: 'EUR':true}}</td>
-        <td class="right">{{row.price | currency: 'EUR':true}}</td>
+        <td class="right">{{row.ht() | currency: 'EUR':true}}</td>
+        <td class="right">{{row.ttc() | currency: 'EUR':true}}</td>
         <td><button (click)="remove(row)">Supprimer</button></td>
       </tr>
     </tbody>

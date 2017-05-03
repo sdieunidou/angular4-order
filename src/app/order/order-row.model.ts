@@ -1,27 +1,18 @@
 export class OrderRow {
-  title: string;
-  author: string;
-  price: number;
-  quantity: number;
-
   constructor(
-    title: string,
-    author: string,
-    price: number,
-    quantity: number
+    public title: string,
+    public author: string,
+    public price: number,
+    public quantity: number
   ) {
-    this.title = title;
-    this.author = author;
-    this.price = price;
-    this.quantity = quantity;
+
+  }
+
+  ht() {
+    return this.price * this.quantity;
+  }
+
+  ttc() {
+    return this.ht() * 1.055;
   }
 }
-
-/*
- constructor(
-   public title: string,
-   public author: string,
-   public price: number,
-   public quantity: number
- )
- */
