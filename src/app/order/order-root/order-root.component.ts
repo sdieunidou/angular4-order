@@ -1,7 +1,4 @@
-import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
-
-import { OrderRow } from "../order-row.model";
-import {ReduceUtil} from "../../reduce.util";
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-order-root',
@@ -10,38 +7,10 @@ import {ReduceUtil} from "../../reduce.util";
 })
 export class OrderRootComponent implements OnInit {
 
-  rows = [
-    new OrderRow("La Nuit des temps", "René Barjavel", 7.43, 3),
-    new OrderRow("Des fleurs pour Algernon", "Daniel Keyes", 6.00, 5),
-  ];
-
-  constructor(@Inject(LOCALE_ID) locale: string) {
-    console.log(locale);
+  constructor() {
   }
 
   ngOnInit() {
-  }
-
-  remove(row: OrderRow) {
-    this.rows = this.rows.filter(r => r !== row);
-  }
-
-  totalHt() {
-    return this.rows
-      .filter(row => row.ht() >= 0)
-      .map(row => row.ht())
-      .reduce(ReduceUtil.total, 0);
-  }
-
-  totalTtc() {
-    return this.rows
-      .filter(row => row.ttc() >= 0)
-      .map(row => row.ttc())
-      .reduce(ReduceUtil.total, 0);
-  }
-
-  isBig(amount) {
-    return amount >= 100;
   }
 
 }
