@@ -1,6 +1,7 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 
 import { OrderRow } from "../order-row.model";
+import {ReduceUtil} from "../../reduce.util";
 
 @Component({
   selector: 'app-order-root',
@@ -28,12 +29,13 @@ export class OrderRootComponent implements OnInit {
   totalHt() {
     return this.rows
       .map(row => row.ht())
-      .reduce((total, value) => total + value, 0);
+      .reduce(ReduceUtil.total, 0);
   }
 
   totalTtc() {
     return this.rows
       .map(row => row.ttc())
-      .reduce((total, value) => total + value, 0);
+      .reduce(ReduceUtil.total, 0);
   }
+
 }
