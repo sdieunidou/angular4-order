@@ -21,12 +21,19 @@ export class OrderRootComponent implements OnInit {
   ngOnInit() {
   }
 
-  public remove = function(row) {
+  remove(row: OrderRow) {
     this.rows = this.rows.filter(r => r !== row);
-    /*
-     this.rows = this.rows.filter((item) => {
-      return item !== row;
-     })
-     */
+  }
+
+  totalHt() {
+    return this.rows
+      .map(row => row.ht())
+      .reduce((total, value) => total + value, 0);
+  }
+
+  totalTtc() {
+    return this.rows
+      .map(row => row.ttc())
+      .reduce((total, value) => total + value, 0);
   }
 }

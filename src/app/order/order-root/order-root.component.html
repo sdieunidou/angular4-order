@@ -1,6 +1,6 @@
 <div>
 
-  <table>
+  <table width="100%">
     <thead>
       <tr>
         <th>Titre</th>
@@ -26,16 +26,16 @@
     <tfoot>
       <tr>
         <td colspan="4">Total</td>
-        <td class="right">???</td>
-        <td class="right">???</td>
+        <td class="right">{{totalHt()}}</td>
+        <td class="right">{{totalTtc()}}</td>
         <td></td>
       </tr>
     </tfoot>
   </table>
 
-  <pre>
-    {{rows|json}}
-  </pre>
+  <hr />
+  <pre>{{rows|json}}</pre>
+  <hr />
 
   <h2>Ajout manuel</h2>
   <form>
@@ -45,6 +45,8 @@
     <label>Quantité <input></label>
     <input type="submit" value="Ajouter">
   </form>
+
+  <hr />
 
   <h2>Ajout depuis le catalogue</h2>
   <form>
